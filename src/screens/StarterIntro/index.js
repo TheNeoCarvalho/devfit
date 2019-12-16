@@ -1,12 +1,41 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 
-import {Container} from './styles';
+import {
+  Container,
+  WelComeImage,
+  WelComeLogo,
+  WelComeText,
+  BeginConfig,
+  Buttom,
+  TextButtom,
+} from './styles';
 
-export default function StarterIntro() {
+function StarterIntro(props) {
+  function start() {
+    props.navigation.navigate('StarterName');
+  }
+
   return (
     <Container>
-      <Text>TESTANDO</Text>
+      <WelComeText>Bem vindo(a) ao Devfit</WelComeText>
+      <WelComeImage>
+        <WelComeLogo source={require('../../assets/boneco.png')} />
+      </WelComeImage>
+      <BeginConfig>
+        <Buttom
+          width="100%"
+          color="#0072c0"
+          underlayColor="#0b7ac6"
+          onPress={start}>
+          <TextButtom>Iniciar configuração</TextButtom>
+        </Buttom>
+      </BeginConfig>
     </Container>
   );
 }
+
+StarterIntro.navigationOptions = {
+  header: null,
+};
+
+export default StarterIntro;

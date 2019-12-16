@@ -12,7 +12,6 @@ const MainStack = createStackNavigator(
     // Apptab,
   },
   {
-    initialRouteName: 'Preload',
     defaultNavigationOptions: {
       header: null,
     },
